@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dayspark.app.billing.PremiumEngineTest" tests="21" skipped="0" failures="0" errors="0" timestamp="2026-11-12T13:15:00.392Z" hostname="runnervmwuk1x" time="0.037">
+  <properties/>
+  <testcase name="offlineBeyondGraceLocksUntilVerified" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.01"/>
+  <testcase name="reinstallRestoresFromPlay" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.0"/>
+  <testcase name="offlineWithinGraceKeepsVerifiedAccess" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.0"/>
+  <testcase name="cancelledPurchaseReturnsToReady" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.002"/>
+  <testcase name="duplicateCallbacksVerifyAndAcknowledgeOnce" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.001"/>
+  <testcase name="playQueryFailureIsNotTreatedAsRefund" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.0"/>
+  <testcase name="refundDetectedByPlayRevokesAccess" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.001"/>
+  <testcase name="failedAcknowledgementRetriesWithBackoff" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.003"/>
+  <testcase name="interruptedCheckoutIsRecoveredOnNextStart" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.0"/>
+  <testcase name="serverAcknowledgedPurchaseIsNotAcknowledgedAgain" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.001"/>
+  <testcase name="serverSaysPendingKeepsLocked" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.0"/>
+  <testcase name="unverifiedPurchaseStaysLockedAndRetries" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.0"/>
+  <testcase name="invalidPurchaseIsRejected" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.0"/>
+  <testcase name="declinedPaymentIsReportedAsDeclined" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.0"/>
+  <testcase name="launchFailureEndsFlow" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.001"/>
+  <testcase name="successfulPurchaseIsVerifiedGrantedAndAcknowledged" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.003"/>
+  <testcase name="refundDetectedByServerRevokesAccess" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.0"/>
+  <testcase name="restoreWithNothingOwnedSaysSo" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.001"/>
+  <testcase name="unacknowledgedPurchaseIsAcknowledgedOnNextStart" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.001"/>
+  <testcase name="pendingPurchaseNeverUnlocksUntilItCompletes" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.0"/>
+  <testcase name="alreadyOwnedTriggersRestore" classname="com.dayspark.app.billing.PremiumEngineTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

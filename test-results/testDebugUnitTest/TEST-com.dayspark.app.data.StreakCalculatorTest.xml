@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dayspark.app.data.StreakCalculatorTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-12T13:15:00.435Z" hostname="runnervmwuk1x" time="0.011">
+  <properties/>
+  <testcase name="dayIndexMatchesMask" classname="com.dayspark.app.data.StreakCalculatorTest" time="0.004"/>
+  <testcase name="todayOpenDoesNotBreakStreak" classname="com.dayspark.app.data.StreakCalculatorTest" time="0.001"/>
+  <testcase name="missedDayBreaksStreak" classname="com.dayspark.app.data.StreakCalculatorTest" time="0.0"/>
+  <testcase name="completionPercentIgnoresOpenTodayAndPreCreation" classname="com.dayspark.app.data.StreakCalculatorTest" time="0.0"/>
+  <testcase name="restDaysAreSkipped" classname="com.dayspark.app.data.StreakCalculatorTest" time="0.003"/>
+  <testcase name="bestStreak" classname="com.dayspark.app.data.StreakCalculatorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

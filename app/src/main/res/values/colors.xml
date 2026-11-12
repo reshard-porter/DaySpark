@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from one role table so every theme defines the same roles. -->
+<resources>
+    <!-- DaySpark -->
+    <color name="dayspark_background">#FBF8F3</color>
+    <color name="dayspark_surface">#FFFFFF</color>
+    <color name="dayspark_surface_low">#F7F3EC</color>
+    <color name="dayspark_surface_mid">#F3EEE6</color>
+    <color name="dayspark_surface_high">#EEE8DE</color>
+    <color name="dayspark_surface_highest">#E8E1D5</color>
+    <color name="dayspark_text">#14213D</color>
+    <color name="dayspark_text_secondary">#4A5568</color>
+    <color name="dayspark_primary">#0F766E</color>
+    <color name="dayspark_primary_container">#CCEFEA</color>
+    <color name="dayspark_on_primary_container">#134E4A</color>
+    <color name="dayspark_outline">#7D838C</color>
+    <color name="dayspark_outline_variant">#E3DDD2</color>
+    <!-- Forest -->
+    <color name="forest_background">#F6F8F2</color>
+    <color name="forest_surface">#FFFFFF</color>
+    <color name="forest_surface_low">#F0F4EB</color>
+    <color name="forest_surface_mid">#EAF0E4</color>
+    <color name="forest_surface_high">#E3EADC</color>
+    <color name="forest_surface_highest">#DCE4D3</color>
+    <color name="forest_text">#1B2A1F</color>
+    <color name="forest_text_secondary">#4B5A4F</color>
+    <color name="forest_primary">#2F6B3A</color>
+    <color name="forest_primary_container">#D6E8D2</color>
+    <color name="forest_on_primary_container">#1E4526</color>
+    <color name="forest_outline">#7B877F</color>
+    <color name="forest_outline_variant">#DBE3D5</color>
+    <!-- Ocean -->
+    <color name="ocean_background">#F3F8FB</color>
+    <color name="ocean_surface">#FFFFFF</color>
+    <color name="ocean_surface_low">#ECF3F8</color>
+    <color name="ocean_surface_mid">#E5EEF5</color>
+    <color name="ocean_surface_high">#DDE8F0</color>
+    <color name="ocean_surface_highest">#D5E2EB</color>
+    <color name="ocean_text">#0B2540</color>
+    <color name="ocean_text_secondary">#46596B</color>
+    <color name="ocean_primary">#0B6A94</color>
+    <color name="ocean_primary_container">#CDE8F5</color>
+    <color name="ocean_on_primary_container">#0A4766</color>
+    <color name="ocean_outline">#788692</color>
+    <color name="ocean_outline_variant">#D6E2EA</color>
+    <!-- Lavender -->
+    <color name="lavender_background">#F8F6FC</color>
+    <color name="lavender_surface">#FFFFFF</color>
+    <color name="lavender_surface_low">#F2EFF9</color>
+    <color name="lavender_surface_mid">#ECE8F5</color>
+    <color name="lavender_surface_high">#E6E1F1</color>
+    <color name="lavender_surface_highest">#DFD9EC</color>
+    <color name="lavender_text">#241A3D</color>
+    <color name="lavender_text_secondary">#564C6B</color>
+    <color name="lavender_primary">#6B4FA3</color>
+    <color name="lavender_primary_container">#E6DDF7</color>
+    <color name="lavender_on_primary_container">#46307A</color>
+    <color name="lavender_outline">#857E92</color>
+    <color name="lavender_outline_variant">#E1DCEB</color>
+    <!-- Sunset -->
+    <color name="sunset_background">#FDF6F1</color>
+    <color name="sunset_surface">#FFFFFF</color>
+    <color name="sunset_surface_low">#F9EFE8</color>
+    <color name="sunset_surface_mid">#F5E8DF</color>
+    <color name="sunset_surface_high">#F0E0D5</color>
+    <color name="sunset_surface_highest">#EAD8CB</color>
+    <color name="sunset_text">#2B1A14</color>
+    <color name="sunset_text_secondary">#65504A</color>
+    <color name="sunset_primary">#A8432A</color>
+    <color name="sunset_primary_container">#FADCCB</color>
+    <color name="sunset_on_primary_container">#7A2E1B</color>
+    <color name="sunset_outline">#8E7F78</color>
+    <color name="sunset_outline_variant">#EDDDD3</color>
+    <!-- Shared across themes -->
+    <color name="ds_on_primary">#FFFFFF</color>
+    <color name="ds_error">#B42318</color>
+    <color name="ds_on_error">#FFFFFF</color>
+    <color name="ds_error_container">#FEE4E2</color>
+    <color name="ds_on_error_container">#7A1A12</color>
+    <color name="ds_streak">#E8A33D</color>
+    <color name="ds_scrim">#66000000</color>
+    <color name="ic_launcher_background">#0F766E</color>
+</resources>

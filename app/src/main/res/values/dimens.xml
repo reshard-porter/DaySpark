@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing scale (4dp base) -->
+    <dimen name="space_xs">4dp</dimen>
+    <dimen name="space_s">8dp</dimen>
+    <dimen name="space_m">12dp</dimen>
+    <dimen name="space_l">16dp</dimen>
+    <dimen name="space_xl">24dp</dimen>
+    <dimen name="space_xxl">32dp</dimen>
+    <dimen name="space_fab_clearance">96dp</dimen>
+
+    <!-- Horizontal page margin; widened on large screens in values-w600dp -->
+    <dimen name="page_margin">20dp</dimen>
+    <!-- Content never stretches wider than this on tablets / landscape -->
+    <dimen name="content_max_width">640dp</dimen>
+
+    <!-- Shapes -->
+    <dimen name="radius_s">8dp</dimen>
+    <dimen name="radius_m">14dp</dimen>
+    <dimen name="radius_card">18dp</dimen>
+    <dimen name="radius_xl">28dp</dimen>
+    <dimen name="stroke_card">1dp</dimen>
+
+    <!-- Touch targets and components -->
+    <dimen name="touch_target">48dp</dimen>
+    <dimen name="button_height">52dp</dimen>
+    <dimen name="check_button_size">48dp</dimen>
+    <dimen name="icon_s">18dp</dimen>
+    <dimen name="icon_m">24dp</dimen>
+    <dimen name="empty_icon">72dp</dimen>
+    <dimen name="day_dot">10dp</dimen>
+    <dimen name="history_cell">36dp</dimen>
+    <dimen name="preview_height">168dp</dimen>
+    <dimen name="progress_track">8dp</dimen>
+</resources>

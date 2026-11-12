@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Debug build only -->
+<resources>
+    <string name="debug_title">Billing test tools (debug build)</string>
+    <string name="debug_source_sim">Billing source: simulator (tap to use Google Play)</string>
+    <string name="debug_source_play">Billing source: Google Play (tap to use simulator)</string>
+    <string name="debug_verify_server">Verification: server (tap to trust locally)</string>
+    <string name="debug_verify_local">Verification: trusted locally, debug only (tap to use server)</string>
+    <string name="debug_scenario">Next simulated result: %1$s</string>
+    <string name="debug_pick_scenario">Next simulated result</string>
+    <string name="debug_complete_pending">Complete pending payment</string>
+    <string name="debug_refund">Simulate refund</string>
+    <string name="debug_reset">Reset simulator</string>
+</resources>

@@ -1,0 +1,17 @@
+{
+  "name": "dayspark-verify",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Minimal purchase verification service for DaySpark's Pro theme pack",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "googleapis": "^189.0.0"
+  }
+}

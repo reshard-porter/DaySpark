@@ -1,0 +1,11 @@
+.gradle/
+build/
+local.properties
+keystore.properties
+*.jks
+*.keystore
+.idea/
+*.iml
+server/node_modules/
+server/data/
+server/service-account*.json

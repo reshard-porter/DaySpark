@@ -1,0 +1,16 @@
+<!-- Launch-screen icon: teal disc with the DaySpark spark. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#0F766E"
+        android:pathData="M54,22a32,32 0,1 1,0 64a32,32 0,1 1,0 -64z" />
+    <path
+        android:fillColor="#FBF8F3"
+        android:pathData="M52,36C53,45 59,51 68,52C59,53 53,59 52,68C51,59 45,53 36,52C45,51 51,45 52,36z" />
+    <path
+        android:fillColor="#E8A33D"
+        android:pathData="M66,36C66.4,39.2 68.8,41.6 72,42C68.8,42.4 66.4,44.8 66,48C65.6,44.8 63.2,42.4 60,42C63.2,41.6 65.6,39.2 66,36z" />
+</vector>

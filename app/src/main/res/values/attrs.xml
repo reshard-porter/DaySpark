@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Decorative accent for streak icons. Never used as a text color. -->
+    <attr name="dsStreakColor" format="color" />
+</resources>

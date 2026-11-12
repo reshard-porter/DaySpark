@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DaySpark</string>
+
+    <!-- Actions -->
+    <string name="action_new_habit">New habit</string>
+    <string name="action_create_habit">Create habit</string>
+    <string name="action_save_habit">Save habit</string>
+    <string name="action_edit">Edit habit</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_close">Close</string>
+    <string name="action_back">Back</string>
+    <string name="action_discard">Discard</string>
+    <string name="action_keep_editing">Keep editing</string>
+    <string name="action_themes">Themes</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_mark_today">Mark today complete</string>
+    <string name="action_completed_today">Completed today</string>
+    <string name="action_preview">Preview</string>
+    <string name="action_apply">Apply</string>
+    <string name="action_unlock">Unlock</string>
+    <string name="action_not_now">Not now</string>
+    <string name="action_use_theme">Use this theme</string>
+    <string name="action_use_named_theme">Use %1$s</string>
+    <string name="action_restore_purchases">Restore purchases</string>
+
+    <!-- Screen titles -->
+    <string name="title_new_habit">New habit</string>
+    <string name="title_edit_habit">Edit habit</string>
+    <string name="title_habit">Habit</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_themes">Themes</string>
+    <string name="title_preview">Preview: %1$s</string>
+
+    <!-- Dashboard -->
+    <string name="greeting_morning">Good morning</string>
+    <string name="greeting_afternoon">Good afternoon</string>
+    <string name="greeting_evening">Good evening</string>
+    <string name="summary_progress">%1$d of %2$d done today</string>
+    <string name="summary_all_done">All done for today. Nice work.</string>
+    <string name="summary_rest_day">Rest day. Nothing is scheduled today.</string>
+    <string name="section_your_habits">Your habits</string>
+    <string name="streak_none">Start a streak today</string>
+    <plurals name="streak_days">
+        <item quantity="one">%d-day streak</item>
+        <item quantity="other">%d-day streak</item>
+    </plurals>
+    <string name="empty_title">Start your first habit</string>
+    <string name="empty_body">Pick one small thing you want to do regularly. DaySpark keeps track of your streak.</string>
+
+    <!-- Schedules -->
+    <string name="schedule_every_day">Every day</string>
+    <string name="schedule_weekdays">Weekdays</string>
+    <string name="schedule_weekends">Weekends</string>
+    <string name="schedule_rest_today">%1$s · rest day today</string>
+
+    <!-- Habit form -->
+    <string name="field_name">Habit name</string>
+    <string name="field_name_helper">For example, Read 10 pages</string>
+    <string name="field_note">Note (optional)</string>
+    <string name="field_repeat_on">Repeat on</string>
+    <string name="error_name_required">Give your habit a name</string>
+    <string name="error_pick_day">Pick at least one day</string>
+    <string name="msg_habit_created">Habit created</string>
+    <string name="msg_habit_updated">Changes saved</string>
+    <string name="dialog_discard_title">Discard changes?</string>
+    <string name="dialog_discard_body">Your edits to this habit won\'t be saved.</string>
+    <string name="dialog_delete_title">Delete “%1$s”?</string>
+    <string name="dialog_delete_body">This removes the habit and its full history. You can\'t undo this.</string>
+
+    <!-- Habit detail -->
+    <string name="section_progress">Progress</string>
+    <string name="section_history">Last 5 weeks</string>
+    <string name="stat_current_streak">Current streak</string>
+    <string name="stat_best_streak">Best streak</string>
+    <string name="stat_30_day_rate">Last 30 days</string>
+    <string name="stat_total">Total check-ins</string>
+    <string name="stat_percent">%1$d%%</string>
+    <plurals name="stat_days">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
+    <string name="legend_done">Done</string>
+    <string name="legend_missed">Missed</string>
+    <string name="history_done">completed</string>
+    <string name="history_missed">missed</string>
+    <string name="history_rest">not scheduled</string>
+    <string name="history_open">not completed yet</string>
+    <string name="history_future">upcoming</string>
+
+    <!-- Errors -->
+    <string name="error_load_habits">Your habits couldn\'t be loaded. Close and reopen DaySpark to try again.</string>
+    <string name="error_save_completion">That check-in wasn\'t saved. Try again.</string>
+    <string name="error_save_habit">The habit wasn\'t saved. Try again.</string>
+    <string name="error_delete_habit">The habit wasn\'t deleted. Try again.</string>
+
+    <!-- Accessibility -->
+    <string name="cd_mark_complete">Mark %1$s complete for today</string>
+    <string name="cd_mark_incomplete">Mark %1$s not complete for today</string>
+    <string name="state_completed">Completed</string>
+    <string name="state_not_completed">Not completed</string>
+    <string name="cd_habit_card">%1$s. %2$s. %3$s. Open details</string>
+    <string name="cd_history_day">%1$s, %2$s</string>
+    <string name="cd_theme_preview">Preview of the %1$s theme</string>
+    <string name="cd_preview_theme">Preview %1$s</string>
+    <string name="cd_apply_theme">Apply %1$s</string>
+    <string name="cd_unlock_theme">Unlock %1$s</string>
+
+    <!-- Settings -->
+    <string name="section_appearance">Appearance</string>
+    <string name="section_purchases">Purchases</string>
+    <string name="section_about">About</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_pro">Pro theme pack</string>
+    <string name="settings_restore_desc">Find a purchase made on this Google account</string>
+    <string name="settings_version">DaySpark %1$s</string>
+    <string name="settings_debug_tools">Billing test tools (debug build)</string>
+    <string name="pro_value_owned">Owned</string>
+    <string name="pro_value_not_owned">Not purchased</string>
+    <string name="pro_value_pending">Payment pending</string>
+    <string name="pro_value_checking">Confirming purchase</string>
+
+    <!-- Themes -->
+    <string name="section_all_themes">All themes</string>
+    <string name="theme_dayspark">DaySpark</string>
+    <string name="theme_dayspark_desc">Warm white, deep navy and teal. Free and always available.</string>
+    <string name="theme_forest">Forest</string>
+    <string name="theme_forest_desc">Soft sage with deep pine accents.</string>
+    <string name="theme_ocean">Ocean</string>
+    <string name="theme_ocean_desc">Cool mist with deep-water blue.</string>
+    <string name="theme_lavender">Lavender</string>
+    <string name="theme_lavender_desc">Pale lilac with rich violet accents.</string>
+    <string name="theme_sunset">Sunset</string>
+    <string name="theme_sunset_desc">Warm peach with terracotta accents.</string>
+    <string name="badge_in_use">In use</string>
+    <string name="badge_free">Free</string>
+    <string name="badge_pro">Pro</string>
+    <string name="badge_pro_locked">Pro</string>
+    <string name="msg_theme_applied">%1$s theme applied</string>
+    <string name="preview_sample_heading">Today</string>
+    <string name="preview_sample_habit">Morning walk</string>
+    <string name="preview_sample_streak">7-day streak</string>
+    <string name="preview_sample_button">Add habit</string>
+    <string name="sample_habit_walk">Morning walk</string>
+    <string name="sample_habit_read">Read 10 pages</string>
+    <string name="sample_habit_water">Drink water</string>
+
+    <!-- Pro theme pack purchase -->
+    <string name="pro_title">DaySpark Pro themes</string>
+    <string name="pro_body">Forest, Ocean, Lavender and Sunset. A one-time purchase: pay once and keep all four themes on every device signed in to your Google account. No subscription.</string>
+    <string name="purchase_button_unlock">Unlock for %1$s</string>
+    <string name="purchase_button_retry">Try again</string>
+    <string name="purchase_button_check_status">Check payment status</string>
+    <string name="purchase_status_loading">Getting the price from Google Play…</string>
+    <string name="purchase_status_ready">One-time purchase. Price shown in your local currency by Google Play.</string>
+    <string name="purchase_status_purchasing">Opening Google Play…</string>
+    <string name="purchase_status_verifying">Confirming your purchase…</string>
+    <string name="purchase_status_pending">Your payment is pending. Pro themes unlock once Google Play confirms it. Until then you can keep using the free theme.</string>
+    <string name="purchase_status_delayed">Payment received. DaySpark is still confirming it and will retry automatically. You won\'t be charged again.</string>
+    <string name="purchase_status_owned">You own Pro themes. Thanks for supporting DaySpark.</string>
+    <string name="purchase_status_billing_unavailable">Google Play purchases aren\'t available on this device or account right now.</string>
+    <string name="purchase_status_product_unavailable">Pro themes aren\'t available right now. Check your connection, then try again.</string>
+    <string name="purchase_simulated_note">Simulated billing (debug build). No real payment is made.</string>
+    <string name="dialog_unlock_title">Unlock %1$s</string>
+    <string name="dialog_unlock_body">%1$s is part of DaySpark Pro themes, together with three other themes. It\'s a one-time purchase of %2$s, not a subscription.</string>
+
+    <!-- Purchase outcomes -->
+    <string name="event_purchase_complete">Pro themes unlocked</string>
+    <string name="event_restored">Pro themes restored</string>
+    <string name="event_pending">Payment pending. Themes unlock when it clears.</string>
+    <string name="event_cancelled">Purchase cancelled. You haven\'t been charged.</string>
+    <string name="event_declined">Payment declined. Check your payment method in Google Play, then try again.</string>
+    <string name="event_already_owned">You already own Pro themes. Restoring them now.</string>
+    <string name="event_nothing_to_restore">No Pro themes purchase found for this Google account.</string>
+    <string name="event_restore_failed">Couldn\'t reach Google Play. Try again when you\'re online.</string>
+    <string name="event_verification_failed">This purchase couldn\'t be verified, so Pro themes stay locked. Contact support if you were charged.</string>
+    <string name="event_revoked">Your Pro themes purchase was refunded, so DaySpark is back to its default theme. Your habits are unchanged.</string>
+    <string name="event_error">Something went wrong with Google Play. Try again.</string>
+</resources>

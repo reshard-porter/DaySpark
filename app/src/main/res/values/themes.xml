@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Shared structure: typography, shapes and component styles. Colors come from the theme below. -->
+    <style name="Base.Theme.DaySpark" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorError">@color/ds_error</item>
+        <item name="colorOnError">@color/ds_on_error</item>
+        <item name="colorErrorContainer">@color/ds_error_container</item>
+        <item name="colorOnErrorContainer">@color/ds_on_error_container</item>
+        <item name="dsStreakColor">@color/ds_streak</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.DaySpark.Display</item>
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.DaySpark.Headline</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.DaySpark.Title</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.DaySpark.Subtitle</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.DaySpark.Body</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.DaySpark.BodySmall</item>
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.DaySpark.Label</item>
+        <item name="textAppearanceLabelMedium">@style/TextAppearance.DaySpark.Caption</item>
+        <item name="materialButtonStyle">@style/Widget.DaySpark.Button</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.DaySpark.Button.Outlined</item>
+        <item name="borderlessButtonStyle">@style/Widget.DaySpark.Button.Text</item>
+        <item name="materialCardViewStyle">@style/Widget.DaySpark.Card</item>
+        <item name="toolbarStyle">@style/Widget.DaySpark.Toolbar</item>
+        <item name="textInputStyle">@style/Widget.DaySpark.TextInput</item>
+        <item name="chipStyle">@style/Widget.DaySpark.Chip</item>
+        <item name="shapeAppearanceCornerSmall">@style/ShapeAppearance.DaySpark.Small</item>
+        <item name="shapeAppearanceCornerMedium">@style/ShapeAppearance.DaySpark.Medium</item>
+        <item name="shapeAppearanceCornerLarge">@style/ShapeAppearance.DaySpark.Large</item>
+        <item name="shapeAppearanceCornerExtraLarge">@style/ShapeAppearance.DaySpark.ExtraLarge</item>
+    </style>
+
+    <style name="Theme.DaySpark" parent="Base.Theme.DaySpark">
+        <item name="colorPrimary">@color/dayspark_primary</item>
+        <item name="colorOnPrimary">@color/ds_on_primary</item>
+        <item name="colorPrimaryContainer">@color/dayspark_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/dayspark_on_primary_container</item>
+        <item name="colorSecondary">@color/dayspark_primary</item>
+        <item name="colorOnSecondary">@color/ds_on_primary</item>
+        <item name="colorSecondaryContainer">@color/dayspark_primary_container</item>
+        <item name="colorOnSecondaryContainer">@color/dayspark_on_primary_container</item>
+        <item name="colorTertiary">@color/dayspark_primary</item>
+        <item name="colorOnTertiary">@color/ds_on_primary</item>
+        <item name="android:colorBackground">@color/dayspark_background</item>
+        <item name="colorOnBackground">@color/dayspark_text</item>
+        <item name="colorSurface">@color/dayspark_background</item>
+        <item name="colorOnSurface">@color/dayspark_text</item>
+        <item name="colorOnSurfaceVariant">@color/dayspark_text_secondary</item>
+        <item name="colorSurfaceVariant">@color/dayspark_surface_high</item>
+        <item name="colorSurfaceContainerLowest">@color/dayspark_surface</item>
+        <item name="colorSurfaceContainerLow">@color/dayspark_surface_low</item>
+        <item name="colorSurfaceContainer">@color/dayspark_surface_mid</item>
+        <item name="colorSurfaceContainerHigh">@color/dayspark_surface_high</item>
+        <item name="colorSurfaceContainerHighest">@color/dayspark_surface_highest</item>
+        <item name="colorSurfaceInverse">@color/dayspark_text</item>
+        <item name="colorOnSurfaceInverse">@color/dayspark_background</item>
+        <item name="colorPrimaryInverse">@color/dayspark_primary_container</item>
+        <item name="colorOutline">@color/dayspark_outline</item>
+        <item name="colorOutlineVariant">@color/dayspark_outline_variant</item>
+        <item name="android:textColorPrimary">@color/dayspark_text</item>
+        <item name="android:textColorSecondary">@color/dayspark_text_secondary</item>
+        <item name="android:windowBackground">@color/dayspark_background</item>
+    </style>
+
+    <style name="Theme.DaySpark.Forest" parent="Base.Theme.DaySpark">
+        <item name="colorPrimary">@color/forest_primary</item>
+        <item name="colorOnPrimary">@color/ds_on_primary</item>
+        <item name="colorPrimaryContainer">@color/forest_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/forest_on_primary_container</item>
+        <item name="colorSecondary">@color/forest_primary</item>
+        <item name="colorOnSecondary">@color/ds_on_primary</item>
+        <item name="colorSecondaryContainer">@color/forest_primary_container</item>
+        <item name="colorOnSecondaryContainer">@color/forest_on_primary_container</item>
+        <item name="colorTertiary">@color/forest_primary</item>
+        <item name="colorOnTertiary">@color/ds_on_primary</item>
+        <item name="android:colorBackground">@color/forest_background</item>
+        <item name="colorOnBackground">@color/forest_text</item>
+        <item name="colorSurface">@color/forest_background</item>
+        <item name="colorOnSurface">@color/forest_text</item>
+        <item name="colorOnSurfaceVariant">@color/forest_text_secondary</item>
+        <item name="colorSurfaceVariant">@color/forest_surface_high</item>
+        <item name="colorSurfaceContainerLowest">@color/forest_surface</item>
+        <item name="colorSurfaceContainerLow">@color/forest_surface_low</item>
+        <item name="colorSurfaceContainer">@color/forest_surface_mid</item>
+        <item name="colorSurfaceContainerHigh">@color/forest_surface_high</item>
+        <item name="colorSurfaceContainerHighest">@color/forest_surface_highest</item>
+        <item name="colorSurfaceInverse">@color/forest_text</item>
+        <item name="colorOnSurfaceInverse">@color/forest_background</item>
+        <item name="colorPrimaryInverse">@color/forest_primary_container</item>
+        <item name="colorOutline">@color/forest_outline</item>
+        <item name="colorOutlineVariant">@color/forest_outline_variant</item>
+        <item name="android:textColorPrimary">@color/forest_text</item>
+        <item name="android:textColorSecondary">@color/forest_text_secondary</item>
+        <item name="android:windowBackground">@color/forest_background</item>
+    </style>
+
+    <style name="Theme.DaySpark.Ocean" parent="Base.Theme.DaySpark">
+        <item name="colorPrimary">@color/ocean_primary</item>
+        <item name="colorOnPrimary">@color/ds_on_primary</item>
+        <item name="colorPrimaryContainer">@color/ocean_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/ocean_on_primary_container</item>
+        <item name="colorSecondary">@color/ocean_primary</item>
+        <item name="colorOnSecondary">@color/ds_on_primary</item>
+        <item name="colorSecondaryContainer">@color/ocean_primary_container</item>
+        <item name="colorOnSecondaryContainer">@color/ocean_on_primary_container</item>
+        <item name="colorTertiary">@color/ocean_primary</item>
+        <item name="colorOnTertiary">@color/ds_on_primary</item>
+        <item name="android:colorBackground">@color/ocean_background</item>
+        <item name="colorOnBackground">@color/ocean_text</item>
+        <item name="colorSurface">@color/ocean_background</item>
+        <item name="colorOnSurface">@color/ocean_text</item>
+        <item name="colorOnSurfaceVariant">@color/ocean_text_secondary</item>
+        <item name="colorSurfaceVariant">@color/ocean_surface_high</item>
+        <item name="colorSurfaceContainerLowest">@color/ocean_surface</item>
+        <item name="colorSurfaceContainerLow">@color/ocean_surface_low</item>
+        <item name="colorSurfaceContainer">@color/ocean_surface_mid</item>
+        <item name="colorSurfaceContainerHigh">@color/ocean_surface_high</item>
+        <item name="colorSurfaceContainerHighest">@color/ocean_surface_highest</item>
+        <item name="colorSurfaceInverse">@color/ocean_text</item>
+        <item name="colorOnSurfaceInverse">@color/ocean_background</item>
+        <item name="colorPrimaryInverse">@color/ocean_primary_container</item>
+        <item name="colorOutline">@color/ocean_outline</item>
+        <item name="colorOutlineVariant">@color/ocean_outline_variant</item>
+        <item name="android:textColorPrimary">@color/ocean_text</item>
+        <item name="android:textColorSecondary">@color/ocean_text_secondary</item>
+        <item name="android:windowBackground">@color/ocean_background</item>
+    </style>
+
+    <style name="Theme.DaySpark.Lavender" parent="Base.Theme.DaySpark">
+        <item name="colorPrimary">@color/lavender_primary</item>
+        <item name="colorOnPrimary">@color/ds_on_primary</item>
+        <item name="colorPrimaryContainer">@color/lavender_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/lavender_on_primary_container</item>
+        <item name="colorSecondary">@color/lavender_primary</item>
+        <item name="colorOnSecondary">@color/ds_on_primary</item>
+        <item name="colorSecondaryContainer">@color/lavender_primary_container</item>
+        <item name="colorOnSecondaryContainer">@color/lavender_on_primary_container</item>
+        <item name="colorTertiary">@color/lavender_primary</item>
+        <item name="colorOnTertiary">@color/ds_on_primary</item>
+        <item name="android:colorBackground">@color/lavender_background</item>
+        <item name="colorOnBackground">@color/lavender_text</item>
+        <item name="colorSurface">@color/lavender_background</item>
+        <item name="colorOnSurface">@color/lavender_text</item>
+        <item name="colorOnSurfaceVariant">@color/lavender_text_secondary</item>
+        <item name="colorSurfaceVariant">@color/lavender_surface_high</item>
+        <item name="colorSurfaceContainerLowest">@color/lavender_surface</item>
+        <item name="colorSurfaceContainerLow">@color/lavender_surface_low</item>
+        <item name="colorSurfaceContainer">@color/lavender_surface_mid</item>
+        <item name="colorSurfaceContainerHigh">@color/lavender_surface_high</item>
+        <item name="colorSurfaceContainerHighest">@color/lavender_surface_highest</item>
+        <item name="colorSurfaceInverse">@color/lavender_text</item>
+        <item name="colorOnSurfaceInverse">@color/lavender_background</item>
+        <item name="colorPrimaryInverse">@color/lavender_primary_container</item>
+        <item name="colorOutline">@color/lavender_outline</item>
+        <item name="colorOutlineVariant">@color/lavender_outline_variant</item>
+        <item name="android:textColorPrimary">@color/lavender_text</item>
+        <item name="android:textColorSecondary">@color/lavender_text_secondary</item>
+        <item name="android:windowBackground">@color/lavender_background</item>
+    </style>
+
+    <style name="Theme.DaySpark.Sunset" parent="Base.Theme.DaySpark">
+        <item name="colorPrimary">@color/sunset_primary</item>
+        <item name="colorOnPrimary">@color/ds_on_primary</item>
+        <item name="colorPrimaryContainer">@color/sunset_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/sunset_on_primary_container</item>
+        <item name="colorSecondary">@color/sunset_primary</item>
+        <item name="colorOnSecondary">@color/ds_on_primary</item>
+        <item name="colorSecondaryContainer">@color/sunset_primary_container</item>
+        <item name="colorOnSecondaryContainer">@color/sunset_on_primary_container</item>
+        <item name="colorTertiary">@color/sunset_primary</item>
+        <item name="colorOnTertiary">@color/ds_on_primary</item>
+        <item name="android:colorBackground">@color/sunset_background</item>
+        <item name="colorOnBackground">@color/sunset_text</item>
+        <item name="colorSurface">@color/sunset_background</item>
+        <item name="colorOnSurface">@color/sunset_text</item>
+        <item name="colorOnSurfaceVariant">@color/sunset_text_secondary</item>
+        <item name="colorSurfaceVariant">@color/sunset_surface_high</item>
+        <item name="colorSurfaceContainerLowest">@color/sunset_surface</item>
+        <item name="colorSurfaceContainerLow">@color/sunset_surface_low</item>
+        <item name="colorSurfaceContainer">@color/sunset_surface_mid</item>
+        <item name="colorSurfaceContainerHigh">@color/sunset_surface_high</item>
+        <item name="colorSurfaceContainerHighest">@color/sunset_surface_highest</item>
+        <item name="colorSurfaceInverse">@color/sunset_text</item>
+        <item name="colorOnSurfaceInverse">@color/sunset_background</item>
+        <item name="colorPrimaryInverse">@color/sunset_primary_container</item>
+        <item name="colorOutline">@color/sunset_outline</item>
+        <item name="colorOutlineVariant">@color/sunset_outline_variant</item>
+        <item name="android:textColorPrimary">@color/sunset_text</item>
+        <item name="android:textColorSecondary">@color/sunset_text_secondary</item>
+        <item name="android:windowBackground">@color/sunset_background</item>
+    </style>
+
+    <!-- Launch screen (androidx.core:core-splashscreen) -->
+    <style name="Theme.DaySpark.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/dayspark_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash</item>
+        <item name="postSplashScreenTheme">@style/Theme.DaySpark</item>
+    </style>
+</resources>

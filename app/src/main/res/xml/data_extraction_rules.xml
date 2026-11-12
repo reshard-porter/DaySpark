@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Habits and theme choice are backed up. The cached premium entitlement is not:
+     on a new device ownership is re-established from Google Play and re-verified. -->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="sharedpref" path="dayspark_entitlement.xml" />
+        <exclude domain="sharedpref" path="dayspark_billing_sim.xml" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="sharedpref" path="dayspark_entitlement.xml" />
+        <exclude domain="sharedpref" path="dayspark_billing_sim.xml" />
+    </device-transfer>
+</data-extraction-rules>

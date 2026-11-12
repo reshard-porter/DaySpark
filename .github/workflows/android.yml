@@ -4,6 +4,9 @@ on:
   push:
   workflow_dispatch:
 
+permissions:
+  contents: write   # lets the publish steps push outputs to ci-* branches
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -27,6 +30,19 @@ jobs:
         run: |
           npm install --no-audit --no-fund
           npm test
+      - name: Publish outputs to the ci-build-outputs branch
+        if: always() && github.ref == 'refs/heads/main'
+        run: |
+          rm -rf /tmp/pub && mkdir -p /tmp/pub
+          cp app/build/outputs/apk/debug/*.apk /tmp/pub/ || true
+          cp app/build/outputs/bundle/release/*.aab /tmp/pub/ || true
+          mkdir -p /tmp/pub/reports && cp -r app/build/reports/* /tmp/pub/reports/ || true
+          mkdir -p /tmp/pub/test-results && cp -r app/build/test-results/* /tmp/pub/test-results/ || true
+          cd /tmp/pub
+          git init -q -b ci-build-outputs
+          git add -A
+          git -c user.name=github-actions -c user.email=github-actions@users.noreply.github.com commit -qm "Outputs for ${{ github.sha }}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" HEAD:ci-build-outputs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -66,6 +82,16 @@ jobs:
           disable-animations: true
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim
           script: bash ci/emulator-run.sh
+      - name: Publish outputs to the ci-emulator-outputs branch
+        if: always() && github.ref == 'refs/heads/main'
+        run: |
+          rm -rf /tmp/pub && mkdir -p /tmp/pub
+          cp -r ci-output/* /tmp/pub/ || true
+          cd /tmp/pub
+          git init -q -b ci-emulator-outputs
+          git add -A
+          git -c user.name=github-actions -c user.email=github-actions@users.noreply.github.com commit -qm "Outputs for ${{ github.sha }}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" HEAD:ci-emulator-outputs
       - uses: actions/upload-artifact@v4
         if: always()
         with:

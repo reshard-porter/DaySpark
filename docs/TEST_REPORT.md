@@ -1,75 +1,72 @@
 # DaySpark test report
 
-Date: 12 November 2026. The build environment had JDK 21 and Node 22 but **no Android SDK and
-no access to Google's Maven repository**. So anything that compiles, packages or runs the
-Android app itself is still to do. Results are grouped by what has actually run.
+Date: 12 November 2026. Code: `main` at the commit named in the `ci-build-outputs` branch.
+Builds and device tests ran on GitHub Actions (`.github/workflows/android.yml`) with the real
+Android SDK, on a Pixel 6 emulator running Android 14 (API 34).
 
-## Completed
+## Summary
 
-| Area | What ran | Result |
-|---|---|---|
-| Purchase rules | `PremiumEngineTest`: 21 JUnit tests against the real `PremiumEngine` with fake Play, server, storage and clock | **21/21 pass** |
-| Streak maths | `StreakCalculatorTest`: 6 JUnit tests (rest days, open today, best streak, 30-day rate) | **6/6 pass** |
-| Tests catch bugs | Mutation check: removing the duplicate-callback guard fails 1 test; letting pending purchases through fails 2 tests | Confirmed |
-| Verification service | 12 `node:test` tests: verified, server acknowledgement, acknowledgement failure, pending, canceled, consumed, unknown token, Play outage, wrong package/product, RTDN refund, voided sweep, HTTP routing and RTDN auth | **12/12 pass** |
-| Server start | `npm start` with the real `googleapis` 189: health check and request validation answer; Play calls fail only for missing credentials (expected) | Pass |
-| Java syntax | All 45 Java files (main, debug, release, test) parsed by `javac` | Pass |
-| Resources | `tools/check_resources.py`: every XML parses; every `@string/@color/@dimen/@style/@drawable/@id` and every `R.*` reference in Java resolves for both debug and release; all five themes define identical roles | Pass |
-| Contrast | All text, button and outline pairs in all five themes meet WCAG AA (table in `DESIGN.md`) | Pass |
+| Area | Result |
+|---|---|
+| Compile (Android SDK 36, AGP 8.13, Play Billing 9.1.0) | **Pass** |
+| Android Lint | **0 errors**, 40 warnings (see below) |
+| Unit tests (JUnit) | **27/27 pass**: 21 purchase rules, 6 streak maths |
+| Verification server tests (Node) | **12/12 pass** |
+| Emulator phase 1: habit flow + purchase flow | **Pass** |
+| Emulator phase 2: app update + restart keeps data, theme, ownership | **Pass** |
+| Emulator phase 3: largest system text size (200%) | **Pass** |
+| Emulator phase 4: Google Accessibility Test Framework on every interaction | **Pass** |
+| Debug APK, release AAB | Built; AAB signed with the upload key |
 
-Purchase scenarios covered by unit tests: success with acknowledgement; pending never unlocks
-(both Play-pending and server-pending); unverified stays locked and retries with backoff;
-forged token rejected; cancel; decline (insufficient funds sub-code); purchase sheet fails to
-open; already owned → restore; duplicate callbacks verify and acknowledge once; acknowledgement
-retry with backoff; server-side acknowledgement isn't repeated; interrupted checkout recovered
-on start; reinstall restore; unacknowledged purchase acknowledged on next start; restore with
-nothing owned; refund detected via Play; refund detected via server; offline within 30-day
-grace keeps access; offline beyond grace locks without deleting ownership and unlocks after
-verification; a failed Play query is not treated as a refund.
+## Emulator test details
 
-## Awaiting an Android SDK build
+Phase 1 (`A1_HabitAndPurchaseFlowTest`) on a fresh install, using the debug billing simulator:
+empty dashboard → name validation → create two habits (every day, weekdays) → name error
+clears while typing → mark complete (progress card, streak, check state update) → habit detail
+→ theme gallery with localized price → full-screen Forest preview → Unlock dialog that says
+"one-time purchase … not a subscription" → **payment pending: theme stays DaySpark** (asserted)
+→ payment approves → Forest applied automatically → dashboard in Forest → Settings shows
+"Owned". Recorded as `video/demo-habit-and-purchase.mp4`.
 
-Run `./gradlew test lint assembleDebug bundleRelease` in Android Studio. Not yet done:
+Phase 2 (`A2_AfterUpdateTest`): the APK is reinstalled over itself (an app update) and the
+process is killed. Both habits, today's check-in, the Forest theme and verified ownership are
+all still there.
 
-- Full compilation against Android, AndroidX, Material 1.13 and Play Billing 9.1.0. Library
-  calls were checked against current documentation, but expect possible small API fixes on
-  the first build.
-- Android Lint.
-- Producing the debug APK and release AAB.
+Phase 3 (`A3_LargeTextTest`): font scale 2.0. Dashboard, detail and gallery screenshots show
+text wrapping, not clipping.
 
-## Awaiting a device or emulator
+Phase 4 (`A4_AccessibilityChecksTest`): ATF checks (labels, touch-target size, contrast,
+duplicate descriptions) on dashboard, check toggles, detail, the create form, gallery and
+settings. No findings.
 
-| # | Test | Expected |
-|---|---|---|
-| H1 | First launch | Launch screen until the dashboard loads; empty state "Start your first habit" |
-| H2 | Create habit | Name required ("Give your habit a name"); at least one day; "Habit created" |
-| H3 | Mark complete | Check fills with the accent color, progress card updates, streak updates, TalkBack says "Completed" |
-| H4 | Edit, delete | Changes saved; delete asks for confirmation and removes history |
-| H5 | Detail | Streaks, 30-day %, total, five-week grid; each cell readable with TalkBack |
-| H6 | Data survives update | Install build N, add habits, install build N+1 over it: all habits and history remain |
-| H7 | Theme persistence | Apply a Pro theme, force-stop, reopen: same theme on every screen |
-| H8 | Free users | Without a purchase, every habit feature works; Pro themes can be previewed, not applied |
-| A1 | Font size 200% | No clipped text; grid cells grow |
-| A2 | TalkBack | All controls labelled; headings navigable; purchase status announced |
-| A3 | Small phone (360×640 dp) and tablet | Layouts fit; content capped at 640 dp on tablets |
-| D1–D10 | Debug simulator | Run each scenario in Settings → Billing test tools; outcomes match the purchase scenarios above |
-| S1 | Screenshots and demo | Record dashboard → create → complete, and gallery → preview → purchase, with `adb shell screenrecord` |
+## Issues found by the device run and fixed
 
-## Awaiting Play Console setup (external)
+1. The name field kept showing "Give your habit a name" after the user typed a name. It now
+   clears while typing, and the test asserts this.
+2. On the theme preview, the purchase card covered half the screen. It's now compact.
+3. When a pending payment cleared later, the theme the user had chosen wasn't applied
+   automatically. A cleared pending payment now counts as a completed purchase (unit-tested).
+4. Lint: an unlabelled decorative image, a redundant `-v26` icon folder and an unused color.
 
-Tests B1–B14 in `PLAY_CONSOLE_SETUP.md` need: the app in a Play Console account; a bundle on
-internal testing; the active `dayspark_pro_themes` product; license testers; the deployed
-verification service with a linked service account; optionally RTDN.
+## Lint warnings left on purpose (40)
 
-## Remaining dependencies
+- 11 newer library versions (appcompat 1.8, core 1.19, Material 1.14 and others) and 1 "not
+  the latest target SDK". Upgrading may require compileSdk 37; do it as its own change, then
+  re-run this workflow.
+- 12 `UnusedAttribute`: `accessibilityHeading` and similar only take effect on newer Android.
+  That's intended.
+- 7 `Overdraw`, 4 `UseCompoundDrawables`, 2 `ApplySharedPref` (debug tools use `commit()` on
+  purpose before restarting), 1 `PluralsCandidate`, 1 `NotifyDataSetChanged`, 1 Gradle
+  patch version. These are minor style or performance notes.
 
-1. **Android SDK build**: compile, lint, APK and AAB. Not possible in this environment.
-2. **Upload keystore** and `keystore.properties`. Owner's decision; never commit them.
-3. **Play Console**: app, internal track, product `dayspark_pro_themes`, license testers.
-4. **Google Cloud**: Play Developer API enabled, service account invited in Play Console.
-5. **Hosting** for `server/` (HTTPS URL), then build with `-PdaysparkVerifyUrl=...`.
-6. **Optional**: Pub/Sub RTDN topic; a shared database for revoked tokens if you scale out;
-   Play Integrity.
-7. **Store listing**: screenshots (from S1), privacy policy, Data safety form.
-8. If DaySpark replaces an existing app: its source, application ID, signing key and schema.
-   The upgrade path (H6) must then be tested against real user data from that app.
+## Not yet run: needs Play Console (external)
+
+Real-money purchase tests B1–B14 in `PLAY_CONSOLE_SETUP.md` need a Play developer account,
+the app on the internal testing track, the active `dayspark_pro_themes` product, license
+testers and the deployed verification server. The simulator runs the same purchase logic,
+but these tests confirm Google's side.
+
+## Before-and-after screenshots
+
+No original app was supplied, so there is no "before" set. `screenshots/` holds the redesigned
+app: 01–06 habit flow, 07–13 purchase flow, 14 after update, 15–17 large text.

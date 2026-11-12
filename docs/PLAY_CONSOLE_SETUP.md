@@ -49,6 +49,13 @@ debug APK with the same application ID works too).
 
 ## 4. Server credentials (keeps service credentials off the device)
 
+> **Already done (12 Nov 2026):** Google Cloud project **DaySpark** (`dayspark-514513`), with the
+> Google Play Android Developer API enabled and service account
+> `dayspark-verify@dayspark-514513.iam.gserviceaccount.com` created (no keys).
+> Still to do: step 3 (invite that email in Play Console once your developer account exists)
+> and step 4 (hosting needs a Cloud billing account).
+
+
 1. Google Cloud console → create or pick a project → **enable "Google Play Android Developer API"**.
 2. **IAM → Service accounts → Create**, for example `dayspark-verify@<project>.iam.gserviceaccount.com`.
    Prefer the hosting platform's attached identity (Cloud Run service identity). Create a JSON

@@ -11,9 +11,15 @@ Google Play Billing.
 
 > This project was written from scratch to match the DaySpark brief because no existing app
 > source was supplied. "Reskin" and "preserve the original app's data" items are therefore
-> handled as forward-compatibility rules (see *Data preservation*). The project has not yet
-> been compiled with the Android SDK — see `docs/TEST_REPORT.md` for exactly what was and
-> wasn't verified.
+> handled as forward-compatibility rules (see *Data preservation*).
+
+## Continuous build
+
+Every push runs `.github/workflows/android.yml`: unit tests, lint, debug APK and release AAB,
+server tests, then four emulator phases (habit and purchase flow, update survival, 200% text,
+accessibility checks) that produce screenshots and a screen recording. Outputs are uploaded as
+workflow artifacts and also pushed to the `ci-build-outputs` and `ci-emulator-outputs`
+branches. Results: `docs/TEST_REPORT.md`.
 
 ## Project layout
 

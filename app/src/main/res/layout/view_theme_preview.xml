@@ -41,6 +41,7 @@
                 android:layout_height="28dp"
                 android:background="@drawable/bg_dot"
                 android:backgroundTint="?attr/colorPrimary"
+                android:importantForAccessibility="no"
                 android:padding="5dp"
                 android:src="@drawable/ic_check"
                 app:tint="?attr/colorOnPrimary" />

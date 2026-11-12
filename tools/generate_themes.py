@@ -35,7 +35,6 @@ c += ['    <!-- Shared across themes -->',
       '    <color name="ds_error_container">#FEE4E2</color>',
       '    <color name="ds_on_error_container">#7A1A12</color>',
       '    <color name="ds_streak">#E8A33D</color>',
-      '    <color name="ds_scrim">#66000000</color>',
       '    <color name="ic_launcher_background">#0F766E</color>',
       '</resources>','']
 open(f"{out}/colors.xml","w").write("\n".join(c))

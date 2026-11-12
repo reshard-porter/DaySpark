@@ -69,6 +69,8 @@ public final class ThemePreviewActivity extends BaseActivity implements PremiumE
         adapter.submit(sampleHabits(), DayClock.today());
 
         purchaseCard = findViewById(R.id.purchase_card);
+        // Compact offer so the previewed screen stays visible; the full explanation is in the gallery.
+        purchaseCard.findViewById(R.id.purchase_body).setVisibility(View.GONE);
         purchaseCard.findViewById(R.id.purchase_restore).setOnClickListener(v -> premium.restore());
         applyButton = findViewById(R.id.preview_apply);
         applyButton.setText(getString(R.string.action_use_named_theme, getString(theme.nameRes)));

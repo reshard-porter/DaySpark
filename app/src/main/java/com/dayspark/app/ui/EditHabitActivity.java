@@ -73,7 +73,15 @@ public final class EditHabitActivity extends BaseActivity {
         buildDayChips();
         findViewById(R.id.preset_every_day).setOnClickListener(v -> setMask(Habit.EVERY_DAY));
         findViewById(R.id.preset_weekdays).setOnClickListener(v -> setMask(Habit.WEEKDAYS));
-        nameInput.setOnFocusChangeListener((v, focused) -> { if (focused) nameLayout.setError(null); });
+        nameInput.addTextChangedListener(new android.text.TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence t, int a, int b, int c) {}
+
+            @Override public void onTextChanged(CharSequence t, int a, int b, int c) {}
+
+            @Override public void afterTextChanged(android.text.Editable e) {
+                if (e.toString().trim().length() > 0) nameLayout.setError(null); // clear as soon as it's fixed
+            }
+        });
         saveButton.setOnClickListener(v -> save());
 
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {

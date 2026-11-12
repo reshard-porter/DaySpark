@@ -22,6 +22,13 @@ import androidx.test.filters.LargeTest;
 
 import com.dayspark.app.ui.MainActivity;
 
+import android.view.View;
+
+import com.google.android.material.textfield.TextInputLayout;
+
+import org.hamcrest.Description;
+import org.hamcrest.Matcher;
+import org.hamcrest.TypeSafeMatcher;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -51,6 +58,7 @@ public class A1_HabitAndPurchaseFlowTest {
             Ui.shot("02_create_habit_validation");
 
             onView(withId(R.id.name_input)).perform(typeText("Morning walk"), closeSoftKeyboard());
+            onView(withId(R.id.name_layout)).check(matches(hasNoErrorText()));
             onView(withId(R.id.note_input)).perform(typeText("20 minutes outside"), closeSoftKeyboard());
             Ui.shot("03_create_habit_filled");
             onView(withId(R.id.save_button)).perform(click());
@@ -108,5 +116,16 @@ public class A1_HabitAndPurchaseFlowTest {
             Ui.waitFor(withText(R.string.pro_value_owned));
             Ui.shot("13_settings_owned");
         }
+    }
+
+    /** The name error must disappear as soon as a name is typed. */
+    private static Matcher<View> hasNoErrorText() {
+        return new TypeSafeMatcher<View>() {
+            @Override protected boolean matchesSafely(View v) {
+                return v instanceof TextInputLayout && ((TextInputLayout) v).getError() == null;
+            }
+
+            @Override public void describeTo(Description d) { d.appendText("TextInputLayout without error"); }
+        };
     }
 }
